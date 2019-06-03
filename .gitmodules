@@ -1,6 +1,3 @@
 [submodule "TwitterConnection"]
 	path = TwitterConnection
 	url = https://github.com/goshdarngames/TwitterConnection.git
-[submodule "context-free"]
-	path = context-free
-	url = https://github.com/MtnViewJohn/context-free.git
