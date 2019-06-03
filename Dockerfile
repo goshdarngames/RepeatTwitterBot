@@ -2,9 +2,8 @@
 
 FROM debian
 
+#install C compiler + dependencies and make to build context free 
 RUN apt update &&                                         \
-
-    #install C compiler and make to build context free 
     apt-get install -y                                    \
         build-essential gcc wget git                      \
         libpng-dev flex libfl-dev bison libicu-dev
