@@ -11,4 +11,5 @@ COPY python_source/ /home/bot
 
 WORKDIR /home/bot
 
-ENTRYPOINT python3 repeat_bot.py
+ENTRYPOINT /bin/ash
+#ENTRYPOINT python3 repeat_bot.py
