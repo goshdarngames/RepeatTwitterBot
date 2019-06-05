@@ -7,7 +7,7 @@
 
 import sys, time, logging
 
-from twitter_connection import TwitterConnection
+from TwitterConnection.twitter_connection import TwitterConnection
 
 #----------------------------------------------------------------------------
 
