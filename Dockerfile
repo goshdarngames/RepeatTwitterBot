@@ -7,7 +7,7 @@ RUN apk update
 #install python3
 RUN apk add python3
 
-COPY python_source/ /home/bot
+COPY python_source/ /home/bot/
 
 WORKDIR /home/bot
 
