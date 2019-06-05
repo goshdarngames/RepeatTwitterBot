@@ -7,6 +7,8 @@
 
 import sys, time, logging
 
+from twitter_connection import TwitterConnection
+
 #----------------------------------------------------------------------------
 
 def post_image ( tc ):
