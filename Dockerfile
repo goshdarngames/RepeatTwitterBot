@@ -17,5 +17,5 @@ COPY requirements.txt /home/bot/requirements.txt
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 
-ENTRYPOINT /bin/ash
-#ENTRYPOINT python3 repeat_bot.py
+#ENTRYPOINT /bin/ash
+ENTRYPOINT python3 repeat_bot.py
