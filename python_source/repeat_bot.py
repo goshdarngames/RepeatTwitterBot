@@ -11,7 +11,7 @@ from TwitterConnection.twitter_connection import TwitterConnection
 
 #----------------------------------------------------------------------------
 
-IMAGES_PATH = os,path.join ( "images" )
+IMAGES_PATH = os.path.join ( "images" )
 
 #----------------------------------------------------------------------------
 
