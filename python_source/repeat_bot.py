@@ -5,15 +5,27 @@
 # exits.
 #############################################################################
 
-import sys, time, logging
+import sys, time, logging, os
 
 from TwitterConnection.twitter_connection import TwitterConnection
 
 #----------------------------------------------------------------------------
 
+IMAGES_PATH = os,path.join ( "images" )
+
+#----------------------------------------------------------------------------
+
 def post_image ( tc ):
     
-    tc.send_message_chain ( [ "Hello from python." ] )
+    #tc.send_message_chain ( [ "Hello from python." ] )
+
+    is_png = lambda x : isinstance ( x, str ) and \
+                        len ( x ) > 4         and \
+                        x [ -4 : ] == '.png'
+
+    image_files = os.listdir ( IMAGES_PATH )
+
+    logging.info ( str ( image_files ) )
 
 #----------------------------------------------------------------------------
 
