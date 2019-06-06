@@ -23,7 +23,7 @@ def post_image ( tc ):
                         len ( x ) > 4         and \
                         x [ -4 : ] == '.png'
 
-    image_files = os.listdir ( IMAGES_PATH )
+    image_files = filer ( is_png, os.listdir ( IMAGES_PATH ) )
 
     logging.info ( str ( image_files ) )
 
