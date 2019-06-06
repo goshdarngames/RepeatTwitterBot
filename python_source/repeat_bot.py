@@ -25,9 +25,19 @@ def post_image ( tc ):
 
     image_files = filter ( is_png, os.listdir ( IMAGES_PATH ) )
 
-    first_image = os.path.join ( IMAGES_PATH, image_files [ 0 ] )
+    try:
 
-    logging.info ( "Posting: " + str ( first_image ) )
+        first_image = os.path.join ( IMAGES_PATH, image_files.next () )
+
+    except StopIteration:
+
+        logging.critical ( "No images in the folder." )
+
+        return
+    
+    else:
+
+        logging.info ( "Posting: " + str ( first_image ) )
 
 #----------------------------------------------------------------------------
 
