@@ -25,7 +25,9 @@ def post_image ( tc ):
 
     image_files = filer ( is_png, os.listdir ( IMAGES_PATH ) )
 
-    logging.info ( str ( image_files ) )
+    first_image = os.path.join ( IMAGES_PATH, image_files [ 0 ] )
+
+    logging.info ( "Posting: " + str ( first_image ) )
 
 #----------------------------------------------------------------------------
 
