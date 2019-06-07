@@ -16,6 +16,10 @@ IMAGES_PATH = os.path.join ( "images" )
 #----------------------------------------------------------------------------
 
 def post_image ( tc ):
+
+    #change to image dir
+
+    os.chdir ( IMAGES_PATH )
     
     #tc.send_message_chain ( [ "Hello from python." ] )
 
@@ -23,13 +27,11 @@ def post_image ( tc ):
                         len ( x ) > 4         and \
                         x [ -4 : ] == '.png'
 
-    image_files = filter ( is_png, os.listdir ( IMAGES_PATH ) )
+    image_files = filter ( is_png, os.listdir () )
 
     try:
 
-        first_image = os.path.join ( ".", IMAGES_PATH, next ( image_files ) )
-
-        first_image = os.path.abspath ( first_image )
+        first_image = next ( image_files )
 
     except StopIteration:
 
