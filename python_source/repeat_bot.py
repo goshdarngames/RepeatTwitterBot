@@ -29,6 +29,8 @@ def post_image ( tc ):
 
         first_image = os.path.join ( ".", IMAGES_PATH, next ( image_files ) )
 
+        first_image = os.path.abspath ( first_image )
+
     except StopIteration:
 
         logging.critical ( "No images in "+str ( IMAGES_PATH ) )
