@@ -39,7 +39,7 @@ def post_image ( tc ):
 
         logging.info ( "Posting: " + str ( first_image ) )
 
-        tc.send_media_message ( "Test image",  str ( first_image ) )
+        tc.send_media_message ( "Test image",  first_image )
 
 #----------------------------------------------------------------------------
 
