@@ -27,9 +27,7 @@ def post_image ( tc ):
 
     try:
 
-        first_image = os.path.join ( IMAGES_PATH,  next ( image_files ) )
-
-        first_image = str ( os.path.abspath ( first_image ) )
+        first_image = os.path.join ( ".", IMAGES_PATH, next ( image_files ) )
 
     except StopIteration:
 
