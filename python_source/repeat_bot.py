@@ -25,21 +25,28 @@ def post_image ( tc ):
 
     image_files = filter ( is_png, os.listdir ( IMAGES_PATH ) )
 
+    # try and get the first file in the folder
     try:
 
-        first_image = os.path.join ( ".", IMAGES_PATH, next ( image_files ) )
+        img_filename =  next ( image_files )
+
+        img_path = os.path.join ( ".", IMAGES_PATH, img_filename )
 
     except StopIteration:
 
         logging.critical ( "No images in "+str ( IMAGES_PATH ) )
 
-        return
-    
+    #post the file
     else:
 
-        logging.info ( "Posting: " + str ( first_image ) )
+        logging.info ( "Posting: " + str ( img_path ) )
 
-        tc.send_media_message ( "Test image",  [ first_image ] )
+        tc.send_media_message ( str ( img_filename ),  [ img_path ] )
+
+        logging.info ( "Deleting: " + str ( img_path ) )
+
+        os.remove ( img_path )
+
 
 #----------------------------------------------------------------------------
 
