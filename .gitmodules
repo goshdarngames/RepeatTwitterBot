@@ -1,3 +1,4 @@
 [submodule "TwitterConnection"]
 	path = python_source/TwitterConnection
 	url = https://github.com/goshdarngames/TwitterConnection.git
+	branch = post-media
