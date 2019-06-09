@@ -17,7 +17,7 @@ IMAGES_PATH = os.path.join ( "images" )
 
 def post_image ( tc ):
     
-    #tc.send_message_chain ( [ "Hello from python." ] )
+    #list all png files in the folder
 
     is_png = lambda x : isinstance ( x, str ) and \
                         len ( x ) > 4         and \
