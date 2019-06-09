@@ -5,13 +5,38 @@
 # exits.
 #############################################################################
 
-import sys, time, logging, os
+import sys, time, logging, os, random
 
 from TwitterConnection.twitter_connection import TwitterConnection
 
 #----------------------------------------------------------------------------
 
 IMAGES_PATH = os.path.join ( "images" )
+
+#----------------------------------------------------------------------------
+
+hashtags = [ "programmerart", "fractal", "fractals", "infinite", 
+             "infinity", "art", "codeart", "creativecoding", 
+             "contextfreeart", "digitalart", "abstract", "abstractart",
+             "procedural", "pattern", "graphics", "maths", "generative",
+             "generativeart", "proceduralart", "infiniteart" ]
+
+#----------------------------------------------------------------------------
+
+def get_msg ( filename ):
+
+
+    #Assume the filename is repeat-VVVVV-.png
+    # - Strip the the last 4 character ( .png )
+    # - Split the filename at the hyphen and save the second part
+
+    variation = filename [ :-4 ].split ( "-" ) [ 1 ]
+
+    tag = "#"+random.choice ( hashtags )
+
+    msg = "Repeat Variation: "+variation+" "+tag
+
+    return msg
 
 #----------------------------------------------------------------------------
 
@@ -39,9 +64,11 @@ def post_image ( tc ):
     #post the file
     else:
 
-        logging.info ( "Posting: " + str ( img_path ) )
+        msg = get_msg ( img_filename )
 
-        tc.send_media_message ( str ( img_filename ),  [ img_path ] )
+        logging.info ( "Posting: " + msg )
+
+        tc.send_media_message ( msg,  [ img_path ] )
 
         logging.info ( "Deleting: " + str ( img_path ) )
 
