@@ -61,14 +61,26 @@ def post_image ( tc ):
 
         logging.critical ( "No images in "+str ( IMAGES_PATH ) )
 
+        return
+
     #post the file
-    else:
 
-        msg = get_msg ( img_filename )
+    msg = get_msg ( img_filename )
 
-        logging.info ( "Posting: " + msg )
+    logging.info ( "Posting: " + msg )
+
+    try:
 
         tc.send_media_message ( msg,  [ img_path ] )
+
+    except:
+
+        logging.critical ( "Unexpected Error during twitter API call:  ",
+                           exc_info=True )
+
+        return
+
+    else:
 
         logging.info ( "Deleting: " + str ( img_path ) )
 
